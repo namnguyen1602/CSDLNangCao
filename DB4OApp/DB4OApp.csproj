@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Db4objects.Db4o">
+      <HintPath>D:\db4o-8.0\bin\net-3.5\Db4objects.Db4o.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
