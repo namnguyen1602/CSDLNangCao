@@ -1,5 +1,7 @@
 ﻿using Db4objects.Db4o;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace DB4OApp
@@ -97,6 +99,17 @@ namespace DB4OApp
             db.Delete(result);
 
             LoadAllData();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            //Filter by name
+            IList<Pilot> result = db.Query<Pilot>(delegate (Pilot pilot)
+           {
+               return pilot.Name.ToLower().Contains(textName.Text.ToLower());
+           });
+            dgvPilot.DataSource = result.ToList();
+            
         }
     }
 }
